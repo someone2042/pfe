@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex; /* Activate flexbox layout for container */
+        min-height: 100vh; /* Set minimum height for viewport coverage */
+      }
+
+      .left,
+      .right {
+        position: fixed; /* Fix left and right divs */
+        top: 0;
+        bottom: 0;
+        width: 250px; /* Set width for fixed divs */
+        background-color: #f0f0f0; /* Adjust background color */
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+        border: 1px solid #ddd;
+        z-index: 10; /* Set stacking order */
+      }
+
+      .left {
+        left: 0;
+        border-right-color: #ccc; /* Adjust border color */
+      }
+
+      .right {
+        right: 0;
+        border-left-color: #ccc; /* Adjust border color */
+      }
+
+      .center {
+        flex-grow: 1; /* Allow center div to grow and fill remaining space */
+        position: fixed;
+        left: 250px;
+        right: 250px;
+      }
+
+      .header {
+        background-color: #007bff; /* Adjust header background color */
+        color: #fff; /* Adjust header text color */
+        display: flex; /* Activate flexbox for header alignment */
+        align-items: center; /* Align header content vertically */
+        justify-content: center; /* Align header content horizontally */
+      }
+
+      .content {
+        padding: 1rem; /* Add some padding for readability */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <h2>Left Side</h2>
+        <p>Content for the left-aligned div.</p>
+      </div>
+
+      <div class="center">
+        <div class="header">
+          <h2>Header</h2>
+        </div>
+        <div class="content">
+          <p>Content for the main, flexible div.</p>
+        </div>
+      </div>
+
+      <div class="right">
+        <h2>Right Side</h2>
+        <p>Content for the right-aligned div.</p>
+      </div>
+    </div>
+  </body>
+</html>
